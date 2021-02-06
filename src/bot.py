@@ -1,5 +1,6 @@
 import logging
 import os
+import random
 
 from dotenv import load_dotenv
 from twitchio.ext import commands
@@ -67,6 +68,48 @@ async def CHSChatQandA(ctx):
 async def cDonate(ctx):
     logger.warning("[cDonate] " + ctx.author.name + " invoked cDonate command.")
     await ctx.send("Donate to FIRST Chesapeake at https://www.firstchesapeake.org/donate")
+    
+# Survey Command
+@bot.command(name="survey", aliases=['s'])
+async def cSurvey(ctx):
+    if ctx.author.is_mod:
+        logger.warning("[cSurvey] " + ctx.author.name + " invoked cSurvey command.")
+        listOfMessages = [
+            "Team survey to provide information to the commentators: https://docs.google.com/forms/d/e/1FAIpQLSfpVK2WZ_viWGWH1toVCKgSnIBTWp22NLvs2UPugPsi0EY-JQ/viewform",
+            "Attention Teams! Would you like to provide the commentators some additional information about your team? If so please fill out the following survey: https://docs.google.com/forms/d/e/1FAIpQLSfpVK2WZ_viWGWH1toVCKgSnIBTWp22NLvs2UPugPsi0EY-JQ/viewform"
+        ]
+        await ctx.send(random.choice(listOfMessages))
+
+# Request for Team Inforamtion Command
+@bot.command(name="teaminfo", aliases=['ta'])
+async def cTeamInfo(ctx):
+    if ctx.author.is_mod:
+        logger.warning("[cTeamInfo] " + ctx.author.name + " invoked cTeamInfo command.")
+        listOfMessages = [
+            "Teams, is your team name wrong? Before your next event make sure to update you team information in the FIRST Team Dashboard: https://my.firstinspires.org/Dashboard/",
+            "Attention Teams! Our systems are pulling data right from HQ so make sure to update your information in the FIRST Team Dashboard: https://my.firstinspires.org/Dashboard/"
+        ]
+        await ctx.send(random.choice(listOfMessages))
+
+# Match Results Command
+@bot.command(name="matchresult", aliases=['matchresults', 'mr'])
+async def cMatchResult(ctx):
+    if ctx.author.is_mod:
+        logger.warning("[cMatchResult] " + ctx.author.name + " invoked cMatchResult command.")
+        listOfMessages = [
+            "Looking for the match results for today’s events? Go to https://events.firstchesapeake.org/ and view the Match Schedule for an event. The website is being automatically updated with the results after each match!"
+        ]
+        await ctx.send(random.choice(listOfMessages))
+        
+# Websites Command
+@bot.command(name="website", aliases=['websites', 'w'])
+async def cWebsite(ctx):
+    if ctx.author.is_mod:
+        logger.warning("[cWebsite] " + ctx.author.name + " invoked cWebsite command.")
+        listOfMessages = [
+            "https://www.firstchesapeake.org/ | https://events.firstchesapeake.org/"
+        ]
+        await ctx.send(random.choice(listOfMessages))
 
 #Uptime Command
 @bot.command(name="uptime", aliases=['up'])
