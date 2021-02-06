@@ -81,7 +81,7 @@ async def cSurvey(ctx):
         await ctx.send(random.choice(listOfMessages))
 
 # Request for Team Inforamtion Command
-@bot.command(name="teaminfo", aliases=['ta'])
+@bot.command(name="teaminfo", aliases=['ti'])
 async def cTeamInfo(ctx):
     if ctx.author.is_mod:
         logger.warning("[cTeamInfo] " + ctx.author.name + " invoked cTeamInfo command.")
