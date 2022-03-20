@@ -1,12 +1,15 @@
 # BUILD ENV
 FROM python:3.8-slim-buster
 
-LABEL version="1.0.2"
+LABEL version="2.0.25"
 LABEL description="Docker image of the FIRST Chesapeake Twitch Bot."
 LABEL maintainer="kinglinktiger@gmail.com"
 
 # Set WORKDIR
 WORKDIR /code
+
+# Update PIP
+RUN /usr/local/bin/python -m pip install --upgrade pip
 
 # Copy the requirements file to the WORKDIR
 COPY requirements.txt .

@@ -4,6 +4,8 @@ Docker image to run the [FIRST Chesapeake](https://www.firstchesapeake.org/) [Tw
 ## INTRODUCTION
 This is a Docker Image of a Twitch Bot for the FIRST Chesapeake Twitch Channel.
 
+The bot will automatically get a list of today's events on startup!
+
 ## INSTALLATION
 1. Update the .env file with your API Keys and the Twitch Channel you want the bot to join.
 2. Run the bot.
@@ -25,14 +27,8 @@ Command | Description
 !uptime/up | Posts the update of the channel in the chat.
 !survey/s | *MODERATOR COMMAND* Posts the link to the team survey to chat.
 !teaminfo/ti | *MODERATOR COMMAND* Posts a chat requesting teams to update their info in TIMS.
-!matchresult/matchresults/mr | *MODERATOR COMMAND* Puts a message in chat letting teams know where to get the match results.
+!matchresult/matchresults/mr | *MODERATOR COMMAND* Sends chats with links to the match results for each of today's events.
 !website/websites/w | *MODERATOR COMMAND* Puts the URLs to the CHS and CHS Events website in chat.
-
-
-## CHANGES
-Date | Description
----- | ----
-30JAN21 | v1.0.0 - Initial Release
-31JAN21 | Adding source files to Github and autobuild DockerHub
-4FEB21 | v1.0.1 - Added Donate and Uptime commands. Started building out Twitch HTTP API as TwitchIO does not include it.
-6FEB21 | v1.0.2 - Added Survey, TeamInfo, MatchResult, and Website commands.
+!rankings/rank/ranks/r | *MODERATOR COMMAND* Sends chats with the top 5 rankings for each of today's events.
+!ping | *MODERATOR COMMAND* Ping/Pong command to help ensure the box is alive.
+!YouTube/yt | *MODERATOR COMMAND* Posts links you CHS YouTube Channels
