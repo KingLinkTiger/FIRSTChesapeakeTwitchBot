@@ -129,4 +129,4 @@ jobs:
           memory: '1'
           os-type: 'Linux'
           environment-variables: BOT_NICK="${{ secrets.BOT_NICK }}" BOT_PREFIX="${{ secrets.BOT_PREFIX }}" CHANNEL="${{ secrets.CHANNEL }}"
-          secure-environment-variables: TMI_TOKEN="${{ secrets.TMI_TOKEN }}" TWITCH_ACCESS_TOKEN="${{ secrets.TWITCH_ACCESS_TOKEN }}" TWITCH_CLIENT_ID="${{ secrets.TWITCH_CLIENT_ID }}" TWITCH_CLIENT_SECRET="${{ secrets.TWITCH_CLIENT_SECRET }}" FRCEVENTS_KEY="${{ secrets.FRCEVENTS_KEY }}
+          secure-environment-variables: TMI_TOKEN="${{ secrets.TMI_TOKEN }}" TWITCH_ACCESS_TOKEN="${{ secrets.TWITCH_ACCESS_TOKEN }}" TWITCH_CLIENT_ID="${{ secrets.TWITCH_CLIENT_ID }}" TWITCH_CLIENT_SECRET="${{ secrets.TWITCH_CLIENT_SECRET }}" FRCEVENTS_KEY="${{ secrets.FRCEVENTS_KEY }}"
