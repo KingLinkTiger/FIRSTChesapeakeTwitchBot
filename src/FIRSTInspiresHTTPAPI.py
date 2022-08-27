@@ -17,8 +17,8 @@ class FIRSTInspiresHTTPAPI:
         
         #if CLIENT_ID == None load it from ENV
         if self.FRCEVENTS_KEY == None:
-            load_dotenv()
-            self.FRCEVENTS_KEY = os.getenv('FRCEVENTS_KEY')
+            self.logger.error("[FIRSTInspiresHTTPAPI][ERROR] FRCEVENTS_KEY is not set!")
+            raise Exception("FRCEVENTS_KEY is not set!")
 
         #Initilize requests_cache to cache API calls
         self.session = CachedSession('FIRSTInspiresHTTPAPI', backend='sqlite')
@@ -153,6 +153,11 @@ class FIRSTInspiresHTTPAPI:
 
         if tmpDistrictCode == None:
             tmpDistrictCode = "CHS"
+        
+        #27AUG22 - Raise error if AllDistrictEvents is not set!
+        if self.AllDistrictEvents == None:
+            self.logger.error("[FIRSTInspiresHTTPAPI][ERROR] AllDistrictEvents is not set!")
+            raise Exception("AllDistrictEvents is not set!")
 
         if len(self.AllDistrictEvents) == 0:
             self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] AllDistrictEvents is 0. Trying to get Events from FIRST")

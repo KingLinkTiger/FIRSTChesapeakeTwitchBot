@@ -39,9 +39,11 @@ class Bot(commands.Bot):
         self.CLIENT_SECRET = os.getenv('TWITCH_CLIENT_SECRET').replace("'", "").replace('"', '')
         self.CHANNEL = os.getenv('CHANNEL').replace("'", "").replace('"', '')
         self.ACCESS_TOKEN = os.getenv('TWITCH_ACCESS_TOKEN').replace("'", "").replace('"', '')
+        self.FRCEVENTS_KEY = os.getenv('FRCEVENTS_KEY').replace("'", "").replace('"', '')
+
 
         self.TwitchHTTPAPI = TwitchHTTPAPI()
-        self.FIRSTInspiresHTTPAPI = FIRSTInspiresHTTPAPI()
+        self.FIRSTInspiresHTTPAPI = FIRSTInspiresHTTPAPI(FRCEVENTS_KEY=self.FRCEVENTS_KEY)
 
         # Set Kickoff Date to None
         self.kickoffDate = None
