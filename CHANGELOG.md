@@ -2,6 +2,12 @@
 
 All notable changes to the project will be documented in this file.
 
+## [20.0.39] - 26MAR22
+### Changed
+- Made environment variable initialization more bulletproof
+- ACCESS_TOKEN, CLIENT_ID, and CLIENT_SECRET to TWITCH_ACCESS_TOKEN, TWITCH_CLIENT_ID, and TWITCH_CLIENT_SECRET to avoid conflicts
+- Updated workflow to incorporate environment variable changes
+
 ## [20.0.38] - 26MAR22
 ### Changed
 - FIRSTInspiresHTTPAPI update_TodaysDistrictEvents function to output the right logging.

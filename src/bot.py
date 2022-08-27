@@ -35,10 +35,10 @@ class Bot(commands.Bot):
 
         #Load Environment Variables from .env file
         load_dotenv()
-        self.CLIENT_ID = os.getenv('CLIENT_ID')
-        self.CLIENT_SECRET = os.getenv('CLIENT_SECRET')
-        self.CHANNEL = os.getenv('CHANNEL')
-        self.ACCESS_TOKEN = os.getenv('ACCESS_TOKEN')
+        self.CLIENT_ID = os.getenv('TWITCH_CLIENT_ID').replace("'", "").replace('"', '')
+        self.CLIENT_SECRET = os.getenv('TWITCH_CLIENT_SECRET').replace("'", "").replace('"', '')
+        self.CHANNEL = os.getenv('CHANNEL').replace("'", "").replace('"', '')
+        self.ACCESS_TOKEN = os.getenv('TWITCH_ACCESS_TOKEN').replace("'", "").replace('"', '')
 
         self.TwitchHTTPAPI = TwitchHTTPAPI()
         self.FIRSTInspiresHTTPAPI = FIRSTInspiresHTTPAPI()
@@ -55,8 +55,8 @@ class Bot(commands.Bot):
         super().__init__(
             token=self.ACCESS_TOKEN,
             client_id=self.CLIENT_ID,
-            nick=os.getenv('BOT_NICK'),
-            prefix=os.getenv('BOT_PREFIX'),
+            nick=os.getenv('BOT_NICK').replace("'", "").replace('"', ''),
+            prefix=os.getenv('BOT_PREFIX').replace("'", "").replace('"', ''),
             initial_channels=[self.CHANNEL]
         )
 
