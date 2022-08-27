@@ -13,7 +13,7 @@ from FIRSTInspiresHTTPAPI import FIRSTInspiresHTTPAPI
 class Bot(commands.Bot):
     def __init__(self):
         #28AUG22 - Get logging level from variable
-        CHSLOGLEVEL =  os.environ.get('CHSLOGFOLDER', 'INFO').upper()
+        CHSLOGLEVEL =  os.environ.get('CHSLOGLEVEL', 'INFO').upper()
 
         #28AUG22 - Add LOGFOLDER Variable
         CHSLOGFOLDER = os.path.join(os.environ.get('CHSLOGFOLDER', '/var/log'), '') # https://stackoverflow.com/questions/2736144/python-add-trailing-slash-to-directory-string-os-independently
@@ -67,6 +67,12 @@ class Bot(commands.Bot):
         self.logger.info("[event_ready] Bot " + self.nick + " has stated!") 
 
     async def event_message(self, message):
+        #27AUG22 - https://twitchio.dev/en/latest/quickstart.html
+        # Messages with echo set to True are messages sent by the bot...
+        # For now we just want to ignore them...
+        if message.echo:
+            return
+
         self.logger.info(message.author.name + ": " + message.content)
     
         # If you override event_message you will need to handle_commands for commands to work.

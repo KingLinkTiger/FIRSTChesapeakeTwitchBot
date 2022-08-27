@@ -2,6 +2,11 @@
 
 All notable changes to the project will be documented in this file.
 
+## [2.0.41] - 27AUG22
+### Changed
+- CHSLOGLEVEL to actually use the right environment variable
+- event_message to return if message was sent from self
+
 ## [2.0.40] - 27AUG22
 ### Added
 - Checks to ensure FRCEVENTS_KEY and AllDistrictEvents were not equal to None. Raised errors if they are.
