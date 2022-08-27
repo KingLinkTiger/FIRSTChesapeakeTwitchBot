@@ -32,3 +32,6 @@ Command | Description
 !rankings/rank/ranks/r | *MODERATOR COMMAND* Sends chats with the top 5 rankings for each of today's events.
 !ping | *MODERATOR COMMAND* Ping/Pong command to help ensure the box is alive.
 !YouTube/yt | *MODERATOR COMMAND* Posts links you CHS YouTube Channels
+
+## CHANGES
+Please review [CHANGELOG.md](CHANGELOG.md)

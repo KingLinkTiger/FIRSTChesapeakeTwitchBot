@@ -1,9 +1,9 @@
 # BUILD ENV
-FROM python:3.8-slim-buster
+FROM python:3.9.13-slim-buster
 
-LABEL version="2.0.25"
+LABEL version="2.0.38"
 LABEL description="Docker image of the FIRST Chesapeake Twitch Bot."
-LABEL maintainer="kinglinktiger@gmail.com"
+LABEL maintainer="KingLinkTiger@gmail.com"
 
 # Set WORKDIR
 WORKDIR /code

@@ -2,6 +2,76 @@
 
 All notable changes to the project will be documented in this file.
 
+## [20.0.38] - 26MAR22
+### Changed
+- FIRSTInspiresHTTPAPI update_TodaysDistrictEvents function to output the right logging.
+- Added Debug output for Week 7 in fDaily
+
+## [20.0.37] - 26MAR22
+### Changed
+- fDaily TimeDeltas to use correct numbers... Original were incorrect.
+
+## [20.0.36] - 26MAR22
+### Added
+- Additional logging to fDaily to output what it calculates For Week 1-6 Start Dates
+
+## [20.0.35] - 26MAR22
+### Added
+- Additional logging to fDaily to output what it calculates as KickoffDate
+
+### Changed
+- fDaily date.weekday check for 6 rather than 5 since Monday=0
+
+## [20.0.34] - 26MAR22
+### Changed
+- datetime.timedelta to just timedelta to reflect the new import... 
+
+## [20.0.33] - 26MAR22
+### Added
+- timedelta to the imports
+
+## [20.0.32] - 26MAR22
+### Changed
+- Added self to all references to kickoffDate
+
+## [20.0.31] - 26MAR22
+### Changed
+- Removed awaits related to fDaily...
+
+## [20.0.30] - 26MAR22
+### Changed
+- Added Parenthasises to a function fall
+- Added awaits because I missed them...
+
+## [20.0.29] - 26MAR22
+### Added
+- fDaily To move the daily commands to a function that is reusable
+
+### Changed
+- cDaily to use fDaily
+- Init to invoke fDaily
+
+## [20.0.28] - 26MAR22
+### Changed
+- Init, moving rDaily to above init command.
+
+## [20.0.27] - 26MAR22
+### Added
+- Added cDaily command to restart rDaily.
+
+### Changed
+- rDaily - Added additional logging
+- Updated Base Image Version
+
+## [20.0.26] - 19MAR22
+### Changed
+- cGetTodaysDistrictEvents and cGetAllDistrictEvents to also log success in the log file.
+
+### Changed
+- Website - Removed events website
+- Updated requirements.txt
+- Updated Python base image
+
 ## [20.0.25] - 13MAR22
 ### Added
 - YouTube Command to put the CHS YouTube links in chat.

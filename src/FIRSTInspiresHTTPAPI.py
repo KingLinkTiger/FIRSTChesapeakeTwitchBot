@@ -155,32 +155,32 @@ class FIRSTInspiresHTTPAPI:
             tmpDistrictCode = "CHS"
 
         if len(self.AllDistrictEvents) == 0:
-            self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] AllDistrictEvents is 0. Trying to get Events from FIRST")
+            self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] AllDistrictEvents is 0. Trying to get Events from FIRST")
             self.update_AllDistrictEvents(districtCode=tmpDistrictCode)
         
         if len(self.AllDistrictEvents) > 0:
             fResult = []
 
             for event in self.AllDistrictEvents["Events"]:
-                self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] Processing Event: " + event["name"])
+                self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] Processing Event: " + event["name"])
                 dateStart = parser.parse(event["dateStart"])
                 dateEnd = parser.parse(event["dateEnd"])
                 if dateStart <= datetime.now() <= dateEnd: # If NOW DATE is BETWEEN eventStart and End
                     if '#' in event["name"] and "Day" in event["name"]: # Contains '#' symbol and 'Day'
-                        self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] Today's Event")
+                        self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] Today's Event")
                         fResult.append(event)
                     elif event["type"] == "DistrictChampionship":
-                        self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] DistrictChampionship Event")
+                        self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] DistrictChampionship Event")
                         fResult.append(event)
                     else: #skip
                         #Do nothing
-                        self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] Unwanted Event. Name/Type Not match")
+                        self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] Unwanted Event. Name/Type Not match")
                 else:
-                    self.logger.debug("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] Unwanted Event, not Today")
+                    self.logger.debug("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] Unwanted Event, not Today")
 
             self.TodaysEvents = fResult
-            self.logger.info("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] Count of Today's Events: " + str(len(fResult)))
+            self.logger.info("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] Count of Today's Events: " + str(len(fResult)))
         else:
-            self.logger.error("[FIRSTInspiresHTTPAPI][get_TodaysDistrictEvents] No Events to process!")
+            self.logger.error("[FIRSTInspiresHTTPAPI][update_TodaysDistrictEvents] No Events to process!")
 
 
