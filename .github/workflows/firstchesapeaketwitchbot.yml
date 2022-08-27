@@ -4,6 +4,7 @@ name: Trigger auto deployment for firstchesapeaketwitchbot
 on:
   # Automatically trigger it when detected changes in repo
   push:
+    branches:
       - 'main'
     tags:
       - 'v*'
